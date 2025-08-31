@@ -1,0 +1,77 @@
+
+:root{
+  --bg:#0f1115;
+  --panel:#121521;
+  --text:#e6e6ea;
+  --muted:#a3a3b2;
+  --teal:#0ea5b7;      /* dark teal */
+  --purple:#7c3aed;    /* vivid purple */
+  --card:#141827;
+  --border:#20263a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+  background:linear-gradient(180deg,var(--bg),#0b0d12);
+  color:var(--text);
+  line-height:1.6;
+}
+a{color:var(--teal); text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px; margin:0 auto; padding:0 20px}
+.site-header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(1.2) blur(10px);
+  background:rgba(15,17,21,0.6);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+.brand{font-weight:800; letter-spacing:1px; font-size:1.1rem; color:#fff}
+.nav-toggle{display:none; background:transparent; border:1px solid var(--border); color:var(--text); padding:.4rem .6rem; border-radius:.5rem}
+.nav-list{display:flex; gap:16px; list-style:none; margin:0; padding:0; align-items:center}
+.nav-list a{padding:.4rem .6rem; border-radius:.5rem}
+.nav-list .btn{margin-left:8px}
+.skip-link{position:absolute; left:-9999px}
+.skip-link:focus{left:8px; top:8px; background:var(--teal); color:#000; padding:.4rem .6rem; border-radius:.4rem}
+.section{padding:72px 0}
+.section.alt{background:linear-gradient(180deg, rgba(18,21,33,0.5), rgba(18,21,33,0.2)); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
+.section h2{font-size:1.8rem; margin:0 0 8px}
+.section-lede{color:var(--muted); margin-bottom:24px}
+.hero{padding:96px 0 80px; border-bottom:1px solid var(--border)}
+.hero-inner{display:grid; grid-template-columns:1.3fr .7fr; gap:40px; align-items:center}
+.hero h1{font-size:2.6rem; margin:0 0 8px}
+.subtitle{color:var(--muted); font-size:1.05rem}
+.cta-group{display:flex; gap:12px; margin:20px 0}
+.btn{display:inline-block; padding:.6rem 1rem; border-radius:.7rem; border:1px solid transparent; font-weight:600}
+.btn-primary{background:linear-gradient(135deg,var(--teal), var(--purple)); color:#081018}
+.btn-secondary{background:#181d2c; color:#fff; border-color:#2a314a}
+.btn-outline{background:transparent; border-color:#2a314a; color:#fff}
+.quick-facts{display:flex; gap:12px; list-style:none; padding:0; margin:16px 0 0; color:var(--muted); flex-wrap:wrap}
+.hero-art img{width:100%; max-width:280px; display:block; margin:0 auto; opacity:.95}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px}
+.card h3{margin-top:0}
+.muted{color:var(--muted); margin-top:-6px}
+.bullets{padding-left:18px; margin:10px 0}
+.tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+.tags span{background:#0f1422; border:1px solid var(--border); color:var(--muted); padding:.2rem .5rem; border-radius:.5rem; font-size:.85rem}
+.timeline{list-style:none; padding:0; margin:0; border-left:2px dashed #263356; margin-left:8px}
+.timeline li{padding:0 0 18px 18px; position:relative}
+.timeline li::before{content:""; position:absolute; left:-9px; top:6px; width:12px; height:12px; background:linear-gradient(135deg,var(--teal), var(--purple)); border-radius:50%}
+.timeline .when{font-weight:600}
+.timeline .what{margin:2px 0}
+.chips{list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px}
+.chips li{border:1px solid var(--border); border-radius:999px; padding:.35rem .7rem; background:#111625; color:#d8d8e2}
+.edu{list-style:disc; margin-left:1.2rem}
+.contact-list{list-style:none; padding:0}
+.site-footer{border-top:1px solid var(--border); padding:28px 0; color:var(--muted)}
+.small{font-size:.9rem}
+@media (max-width: 900px){
+  .hero-inner{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .nav-toggle{display:inline-block}
+  .nav-list{display:none; flex-direction:column; align-items:flex-start; background:rgba(9,11,16,.98); position:absolute; right:16px; top:56px; padding:12px; border:1px solid var(--border); border-radius:12px}
+  .nav-list.show{display:flex}
+}
